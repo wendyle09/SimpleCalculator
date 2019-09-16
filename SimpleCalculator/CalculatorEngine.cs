@@ -32,7 +32,7 @@ namespace SimpleCalculator
                     result = dblNum1 / dblNum2;
                     break;
                 default:
-                    throw new InvalidOperationException("Specified operation is not recognized.");
+                    throw new InvalidOperationException("Specified operator is not recognized. Operator must be one of the following: +, add, -, minus, *, multiply, /, divide");
             }
 
             return result;

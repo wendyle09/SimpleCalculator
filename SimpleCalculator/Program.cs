@@ -16,12 +16,12 @@ namespace SimpleCalculator
                     InputConverter inputConverter = new InputConverter();
                     CalculatorEngine calculatorEngine = new CalculatorEngine();
 
-                    // Read inputs
-                    Console.Write("Enter first number: ");
+                    // Prompt for and receive equation
+                    Console.Write(Constants.PromptForFirstNumber);
                     double dblNum1 = inputConverter.ConvertToNumeric(Console.ReadLine());
-                    Console.Write("Enter second number: ");
+                    Console.Write(Constants.PromptForSecondNumber);
                     double dblNum2 = inputConverter.ConvertToNumeric(Console.ReadLine());
-                    Console.Write("Enter operator: ");
+                    Console.Write(Constants.PromptForOperator);
                     string operation = Console.ReadLine();
 
                     // Call Calculate function
@@ -39,11 +39,11 @@ namespace SimpleCalculator
                     // Ask if user wants to restart program
                     do
                     {
-                        Console.Write("Do you want to start over? (yes/no)");
+                        Console.Write(Constants.PromptForRestartingProgram);
                         strRestart = Console.ReadLine();
-                    } while (!strRestart.Equals("yes", StringComparison.OrdinalIgnoreCase) && !strRestart.Equals("no", StringComparison.OrdinalIgnoreCase));
+                    } while (!strRestart.Equals(Constants.InputToRestartProgram, StringComparison.OrdinalIgnoreCase) && !strRestart.Equals(Constants.InputToStopProgram, StringComparison.OrdinalIgnoreCase));
                     // Set boolean based on user's input
-                    continueProgram = strRestart.Equals("yes", StringComparison.OrdinalIgnoreCase);
+                    continueProgram = strRestart.Equals(Constants.InputToRestartProgram, StringComparison.OrdinalIgnoreCase);
                 }
             } while (continueProgram);
         }
