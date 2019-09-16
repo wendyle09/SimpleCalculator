@@ -13,26 +13,26 @@ namespace SimpleCalculator
             double result;
 
             // Perform calculation based on input operator
-            switch (strOperation.ToLower())
+            switch (strOperation.ToUpper())
             {
-                case "add":
-                case "+":
+                case Constants.InputForAdditionSymbol:
+                case Constants.InputForAdditionWord:
                     result = dblNum1 + dblNum2;
                     break;
-                case "minus":
-                case "-":
+                case Constants.InputForSubtractionSymbol:
+                case Constants.InputForSubtractionWord:
                     result = dblNum1 - dblNum2;
                     break;
-                case "multiply":
-                case "*":
+                case Constants.InputForMultiplicationSymbol:
+                case Constants.InputForMultiplicationWord:
                     result = dblNum1 * dblNum2;
                     break;
-                case "divide":
-                case "/":
+                case Constants.InputForDivisionSymbol:
+                case Constants.InputForDivisionWord:
                     result = dblNum1 / dblNum2;
                     break;
                 default:
-                    throw new InvalidOperationException("Specified operator is not recognized. Operator must be one of the following: +, add, -, minus, *, multiply, /, divide");
+                    throw new InvalidOperationException(Constants.OutputForInvalidOperator);
             }
 
             return result;

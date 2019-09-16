@@ -10,7 +10,7 @@ namespace SimpleCalculator.Test.Unit
         private readonly InputConverter _inputConverter = new InputConverter();
 
         [TestMethod]
-        public void ConvertsValidStringInputIntoDouble()
+        public void ConvertValidStringInputIntoDouble()
         {
             string strInput = "5";
             double dblNum = _inputConverter.ConvertToNumeric(strInput);
@@ -19,7 +19,7 @@ namespace SimpleCalculator.Test.Unit
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void FailsToConvertInvalidStringInputIntoDouble()
+        public void FailToConvertInvalidStringInputIntoDouble()
         {
             string strInput = "five";
             double dblNum = _inputConverter.ConvertToNumeric(strInput);
