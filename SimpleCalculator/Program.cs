@@ -6,26 +6,46 @@ namespace SimpleCalculator
     {
         static void Main(string[] args)
         {
-            try
+            bool continueProgram = true;
+            string strRestart;
+
+            do
             {
-                InputConverter inputConverter = new InputConverter();
-                CalculatorEngine calculatorEngine = new CalculatorEngine();
+                try
+                {
+                    InputConverter inputConverter = new InputConverter();
+                    CalculatorEngine calculatorEngine = new CalculatorEngine();
 
-                // Read inputs
-                double dblNum1 = inputConverter.ConvertToNumeric(Console.ReadLine());
-                double dblNum2 = inputConverter.ConvertToNumeric(Console.ReadLine());
-                string operation = Console.ReadLine();
+                    // Read inputs
+                    Console.Write("Enter first number: ");
+                    double dblNum1 = inputConverter.ConvertToNumeric(Console.ReadLine());
+                    Console.Write("Enter second number: ");
+                    double dblNum2 = inputConverter.ConvertToNumeric(Console.ReadLine());
+                    Console.Write("Enter operator: ");
+                    string operation = Console.ReadLine();
 
-                // Call Calculate function
-                double result = calculatorEngine.Calculate(operation, dblNum1, dblNum2);
+                    // Call Calculate function
+                    double result = calculatorEngine.Calculate(operation, dblNum1, dblNum2);
 
-                // Write result
-                Console.WriteLine(result);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+                    // Write result
+                    Console.WriteLine(result);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                finally
+                {
+                    // Ask if user wants to restart program
+                    do
+                    {
+                        Console.Write("Do you want to start over? (yes/no)");
+                        strRestart = Console.ReadLine();
+                    } while (!strRestart.Equals("yes", StringComparison.OrdinalIgnoreCase) && !strRestart.Equals("no", StringComparison.OrdinalIgnoreCase));
+                    // Set boolean based on user's input
+                    continueProgram = strRestart.Equals("yes", StringComparison.OrdinalIgnoreCase);
+                }
+            } while (continueProgram);
         }
     }
 }
