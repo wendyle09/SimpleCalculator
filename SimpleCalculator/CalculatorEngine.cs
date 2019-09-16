@@ -1,22 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace SimpleCalculator
 {
-    class CalculatorEngine
+    public class CalculatorEngine
     {
         public double Calculate(string strOperation, double dblNum1, double dblNum2)
         {
             double result;
 
+            // Perform calculation based on input operator
             switch (strOperation.ToLower())
             {
                 case "add":
                 case "+":
                     result = dblNum1 + dblNum2;
                     break;
-                case "subtract":
                 case "minus":
                 case "-":
                     result = dblNum1 - dblNum2;

@@ -57,8 +57,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleApp1\SimpleCalculator.csproj">
-      <Project>{8ba5fef7-388e-4ff2-8367-e3dabb6837d8}</Project>
+    <ProjectReference Include="..\SimpleCalculator\SimpleCalculator.csproj">
+      <Project>{f07ffbc8-172d-412a-8ac2-21c13355cbdf}</Project>
       <Name>SimpleCalculator</Name>
     </ProjectReference>
   </ItemGroup>

@@ -1,5 +1,5 @@
 ﻿using System;
-using ConsoleApp1;
+using SimpleCalculator;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SimpleCalculator.Test.Unit
